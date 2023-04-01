@@ -227,6 +227,29 @@ nav.--nav-scrolled .--nav-links li:hover {
     border-bottom: none;
 }
 
+/* Footer */
+
+footer {
+    display: flex;
+    height: 1vh;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    border-top-right-radius: 2.5rem;
+    border-top-left-radius: 2.5rem;
+    background-color: var(--primary);
+    color: var(--darkBackground);
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: var(--fontSize5);
+    font-weight: bold;
+}
+
 /* Search */
 
 .--search-widget {
@@ -624,4 +647,15 @@ main {
 .--blog-post-button:hover {
     background-color: var(--darkBackground);
     color: var(--lightBackground);
+}
+
+/* Coming soon (TEMPROARY) */
+
+.--coming-soon-text {
+    width: 100%;
+    margin-top: 25vh;
+    color: var(--lightBackground);
+    text-align: center;
+    font-size: var(--fontSize1);
+    
 }
