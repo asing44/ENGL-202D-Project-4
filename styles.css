@@ -584,6 +584,15 @@ main {
     display: flex;
     flex-direction: column;
     min-width: 50%;
+    height: fit-content;
+}
+
+.--blog-post-image {
+    height: 29rem;
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
 }
 
 .--blog-post-title {
