@@ -116,6 +116,7 @@ nav {
     border-color: var(--lightBackground);
     font-family: var(--font2);
     z-index: 2;
+    transition: all 500ms ease-in-out;
 }
 
 .--nav-scrolled {
@@ -182,17 +183,42 @@ nav {
     transition: width 500ms ease-in-out, border-bottom 500ms ease-in, background-color 500ms ease-in-out, color 500ms ease-in-out;
 }
 
+.--nav-links li a {
+    position: relative;
+    display: block;
+}
+
+.--nav-links li a:active {
+    border-bottom: .10rem solid var(--darkBackground);
+}
+
+.nav.--nav-scrolled .--nav-links li a:active {
+    border-bottom: .10rem solid var(--lightBackground);
+}
+
 #contact_link {
     background-color: var(--darkHighlight);
     color: var(--darkBackground);
     border-radius: 1rem;
 }
 
-.--nav-links li:hover {
+nav .--nav-links li:hover {
     width: 20rem;
     border-radius: 0;
     border-bottom: 0.1rem solid;
     cursor: pointer;
+}
+
+nav.--nav-scrolled .--nav-links li:hover {
+    width: 20rem;
+    border-radius: 0;
+    border-bottom: 0.1rem solid var(--lightBackground);
+    cursor: pointer;
+}
+
+.--nav-links-active {
+    border-radius: 0;
+    border-bottom: 0.1rem solid;
 }
 
 #contact_link:hover {
@@ -423,10 +449,9 @@ nav {
 
 main {
     position: relative;
-    display: grid;
     width: 80%;
-    min-height: 100vh;
     margin: 4rem auto;
+    padding: 8rem 2rem;
     background-color: var(--primary);
     border-radius: 2.5rem;
 }
@@ -435,20 +460,22 @@ main {
 
 .--introduction {
     position: relative;
-    padding: 8rem 2rem;
 }
 
 .--introduction p {
     text-align: center;
 }
 
-.--introduction .--intro-text {
+.--header {
     position: relative;
     width: 80%;
     margin: 0 auto;
     text-align: center;
-    font-size: 3.157rem;
     font-family: var(--font1);
+}
+
+.--header.--intro-header {
+    font-size: var(--fontSize1);
 }
 
 .--divider-container {
@@ -527,6 +554,49 @@ main {
 }
 
 .--quick-contact-button:hover {
+    background-color: var(--darkBackground);
+    color: var(--lightBackground);
+}
+
+/* Blog page */
+
+.--header-container {
+    position: relative;
+    height: fit-content;
+}
+
+.--blog-page-header p {
+    margin: 0;
+}
+
+.--main-content-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2.5rem;
+    row-gap: 3.5rem;
+}
+
+.--blog-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+}
+
+.--blog-post-button {
+    display: block;
+    height: 2rem;
+    width: 8rem;
+    background-color: var(--darkHighlight);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: var(--fontSize6);
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+.--blog-post-button:hover {
     background-color: var(--darkBackground);
     color: var(--lightBackground);
 }
