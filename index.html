@@ -11,6 +11,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro&family=Telex&family=Titillium+Web:wght@700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
     <body>
         <div class="--search-widget">
@@ -28,7 +29,7 @@
                 <li class="--experience-link"><a href="./exeperience.html">Experience</a></li>
                 <li class="--about-link"><a href="./about.html">About</a></li>
                 <li class="--blog-link"><a href="./blog.html">Blog</a></li>                
-                <li class="--contact-link" id="contact_link"><a href="./contact.html">Contact</a></li>
+                <li class="--contact-link" id="contact_link"><a onclick="openContact()">Contact</a></li>
             </ul>
         </nav>
         <form class="--quick-contact-form" role="form" aria-label="Contact form">
@@ -45,7 +46,10 @@
                 <label for="contact_message"></label>
                 <textarea id="contact_message" rows="5" cols="8" placeholder="Your message..." required aria-required="true"></textarea>
             </fieldset>
-            <button type="submit">Send message</button>
+            <button class="--contact-form-send" type="submit">Send message</button>
+            <button class="--contact-form-close" type="button" onclick="closeContact()">
+                <svg id="--contact-form-close-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><g transform="translate(.000001 0)"><line x1="9.326711" y1="0" x2="-9.326712" y2="0" transform="translate(25 24.924451)" fill="none" stroke-width="2.5" stroke-linecap="round"/><line x1="-4.663356" y1="4.512258" x2="4.663356" y2="-4.512257" transform="matrix(0 1-1 0 20.185546 29.587807)" fill="none"  stroke-width="2.5" stroke-linecap="round"/><line x1="-4.663356" y1="4.512258" x2="4.663356" y2="-4.512257" transform="translate(20.336644 20.412193)" fill="none" stroke-width="2.5" stroke-linecap="round"/></g></svg>
+            </button>
        </form>
         <section class="--welcome">
             <div class="--welcome-container">
@@ -68,7 +72,7 @@
                 </div>
                 <div class="--quick-contact">
                     <p class="--quick-contact-text">Want to get in touch? <br>Send me a message!</p>
-                    <button class="--quick-contact-button">Contact</button>
+                    <button class="--quick-contact-button" onclick="openContact()">Contact</button>
                 </div>
             </section>
         </main>

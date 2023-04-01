@@ -10,7 +10,7 @@
     --fontSize6: 1rem;
     --fontSize7: 0.75rem;
     --lightBackground: #F4EDEA;
-    --darkBackground: #12263A;
+    --darkBackground: #13263a;
     --lightHighlight: #06BCC1;
     --darkHighlight: #E09F7D;
     --primary: #C5D8D1;
@@ -115,7 +115,7 @@ nav {
     color: var(--lightBackground);
     border-color: var(--lightBackground);
     font-family: var(--font2);
-    z-index: 100;
+    z-index: 2;
 }
 
 .--nav-scrolled {
@@ -208,7 +208,7 @@ nav {
     bottom: 0;
     right: 0;
     margin: 0 2.5rem 4rem 0;
-    z-index: 500;
+    z-index: 2;
 }
 
 .--search-widget > form {
@@ -230,7 +230,7 @@ nav {
     color: hsla(210, 53%, 15%, 0.5);
     animation: searchActive 500ms infinite both alternate ease-in-out;
     animation-play-state: paused;
-    z-index: 500;
+    z-index: 2;
 }
 
 @keyframes searchActive {
@@ -258,7 +258,7 @@ nav {
     border-radius: 1rem;
     cursor: pointer;
     transition: all 250ms ease-out;
-    z-index: 501;
+    z-index: 3;
 }
 
 .--search-button:hover + .--search-input{
@@ -282,12 +282,16 @@ nav {
     top: 0;
     right: 0;
     height: 100vh;
-    width: 20vw;
-    padding: 5rem 2rem;
+    width: 0vw;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-right: 0rem;
+    padding-left: 0rem;
     border-top-left-radius: 4rem;
     background-color: var(--darkHighlight);
-    z-index: 502;
     overflow: hidden;
+    transition: all 500ms ease-in-out;
+    z-index: 4;
     box-sizing: border-box;
 }
 
@@ -320,7 +324,7 @@ nav {
     word-wrap: break-word;
 }
 
-.--quick-contact-form button {
+.--quick-contact-form button.--contact-form-send {
     height: 3.1rem;
     align-self: flex-end;
     padding: 0.5rem 1rem;
@@ -329,6 +333,44 @@ nav {
     background-color: var(--darkBackground);
     color: var(--lightBackground);
     font-size: var(--fontSize5);
+    transition: all 250ms ease-in-out;
+}
+
+.--quick-contact-form button.--contact-form-send:hover {
+    background-color: var(--primary);
+    color: var(--darkBackground);
+}
+
+.--quick-contact-form button.--contact-form-close {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 5rem;
+    left: 3rem;
+    height: 3.1rem;
+    width: 7rem;
+    background-color: var(--darkBackground);
+    border-radius: 1rem;
+    text-align: center;
+    transition: all 250ms ease-in-out;
+}
+
+.--quick-contact-form button.--contact-form-close:hover {
+    background-color: var(--primary);
+    color: var(--darkBackground);
+}
+
+#--contact-form-close-icon {
+    position: absolute;
+    padding: 1rem;
+    margin: 0;
+    stroke: var(--lightBackground);
+    transition: all 250ms ease-in-out;
+}
+
+.--quick-contact-form button.--contact-form-close:hover #--contact-form-close-icon {
+    stroke: var(--darkBackground);
 }
 
 /* Welcome */

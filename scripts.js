@@ -52,3 +52,19 @@ function searchClick() {
         searchInput.removeEventListener("animationiteration", this);
     })
 }
+
+// Quick contact
+
+const contactSection = document.getElementsByClassName("--quick-contact-form")[0];
+
+function openContact() {
+    contactSection.style.width = "20vw";
+    contactSection.style.paddingRight = "2rem"
+    contactSection.style.paddingLeft = "2rem";
+}
+
+function closeContact() {
+    contactSection.style.width = "0vw";
+    contactSection.style.paddingRight = "0rem"
+    contactSection.style.paddingLeft = "0rem";
+}
