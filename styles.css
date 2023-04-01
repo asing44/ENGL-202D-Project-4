@@ -2,12 +2,19 @@
     --font1: 'Titillium Web', sans-serif;
     --font2: 'Telex', sans-serif;
     --font3: 'Source Serif Pro', serif;
+    --fontSize1: 4.209rem;
+    --fontSize2: 3.157rem;
+    --fontSize3: 2.369rem;
+    --fontSize4: 1.777rem;
+    --fontSize5: 1.333rem;
+    --fontSize6: 1rem;
+    --fontSize7: 0.75rem;
     --lightBackground: #F4EDEA;
     --darkBackground: #12263A;
     --lightHighlight: #06BCC1;
     --darkHighlight: #E09F7D;
     --primary: #C5D8D1;
-    --accent1: #417B5A;
+    --accent1: rgba(19, 38, 58, 0.5);
     --accent2: #4A6FA5;
     --accent3: #E4572E;
     --accent4: #53131E;
@@ -24,39 +31,56 @@ body {
     position: relative;
     margin: 0;
     padding: 0;
-    box-sizing: content-box;
+    box-sizing: border-box;
     background-color: var(--darkBackground);
-    line-height: 1.75;
+    line-height: 1.4;
     font-family: var(--font3);
 }
 
 h1 {
     margin-top: 0;
+    margin-bottom: 1.2rem;
     font-size: 4.209rem;
     font-family: var(--font1);
+    line-height: 1.2;
   }
   
 h2 {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
     font-size: 3.157rem;
     font-family: var(--font1);
 }
   
 h3 {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
     font-size: 2.369rem;
     font-family: var(--font2);
 }
   
 h4 {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
     font-size: 1.777rem;
     font-family: var(--font2);
 }
   
 h5 {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
     font-size: 1.333rem;
     font-family: var(--font2);
 }
+
+p {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+}
   
 small, .text_small {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
     font-size: 0.75rem;
     font-family: var(--font3);
 }
@@ -64,6 +88,19 @@ small, .text_small {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+input {
+    border: none;
+}
+
+fieldset {
+    border: none;
+}
+
+button {
+    border: none;
+    cursor: pointer;
 }
 
 /* Navigation */
@@ -187,8 +224,10 @@ nav {
     height: 100%;
     width: 10%;
     padding: 0 0 0 5%;
-    border: none;
+    border: 2px solid var(--darkHighlight) inset;
     border-radius: 1rem;
+    font-size: 1rem;
+    color: hsla(210, 53%, 15%, 0.5);
     animation: searchActive 500ms infinite both alternate ease-in-out;
     animation-play-state: paused;
     z-index: 500;
@@ -202,6 +241,11 @@ nav {
     to {
         width: 100%;
     }
+}
+
+.--search-input:focus {
+    outline: none;
+    color: var(--darkBackground);
 }
 
 .--search-button {
@@ -227,6 +271,66 @@ nav {
     color: var(--darkBackground);
 }
 
+/* Contact form */
+
+.--quick-contact-form {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    row-gap: 5%;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 20vw;
+    padding: 5rem 2rem;
+    border-top-left-radius: 4rem;
+    background-color: var(--darkHighlight);
+    z-index: 502;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.--contact-heading {
+    height: 15%;
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    align-self: stretch;
+    text-align: center;
+    color: var(--darkBackground);
+    border-bottom: .10rem solid var(--darkBackground);
+    font-size: 3.157rem;
+    font-family: var(--font1);
+}
+
+.--quick-contact-form fieldset input, .--quick-contact-form fieldset textarea {
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    width: 90%;
+    border: none;
+    font-size: var(--fontSize6);
+}
+
+.--quick-contact-form fieldset input {
+    min-height: 2rem;
+}
+
+.--quick-contact-form fieldset textarea {
+    min-height: 5rem;
+    word-wrap: break-word;
+}
+
+.--quick-contact-form button {
+    height: 3.1rem;
+    align-self: flex-end;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: var(--darkBackground);
+    color: var(--lightBackground);
+    font-size: var(--fontSize5);
+}
+
 /* Welcome */
 
 .--welcome {
@@ -243,13 +347,14 @@ nav {
     color: var(--lightBackground);
 }
 
-.--welcome-container h1, .--welcome-container p {
+.--welcome-container .--welcome-content, .--welcome-container p {
     margin: 0;
 }
 
-.--welcome-container h1 {
+.--welcome-container .--welcome-content {
     display: block;
     font-size: 7rem;
+    font-family: var(--font1);
 }
 
 .--welcome-container p {
@@ -280,6 +385,100 @@ main {
     width: 80%;
     min-height: 100vh;
     margin: 4rem auto;
-    background-color: var(--lightBackground);
+    background-color: var(--primary);
     border-radius: 2.5rem;
+}
+
+/* Introduction */
+
+.--introduction {
+    position: relative;
+    padding: 8rem 2rem;
+}
+
+.--introduction p {
+    text-align: center;
+}
+
+.--introduction .--intro-text {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 3.157rem;
+    font-family: var(--font1);
+}
+
+.--divider-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem 0;
+}
+
+.--introduction .--divider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+    color: var(--accent1);
+}
+
+.--introduction .--divider-text {
+    margin: 0 1rem;
+    font-size: 1rem;
+}
+
+.--divider-line-double {
+    position: relative;
+    height: 0.25rem;
+    width: 20rem;
+    margin: 0 1rem;
+    background-color: var(--accent1);
+    border-radius: 1rem;
+}
+
+.--divider-line {
+    position: relative;
+    height: 0.25rem;
+    width: 100%;
+    margin: 0 1rem;
+    background-color: var(--accent1);
+    border-radius: 1rem;
+}
+
+.--intro-badges img {
+    display: block;
+    margin: 0 auto;
+}
+
+.--quick-contact {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10%;
+}
+
+.--quick-contact-text {
+    display: block;
+    max-width: 20rem;
+    margin: 0;
+    font-size: 1.777rem;
+    font-family: var(--font2);
+}
+
+.--quick-contact-button {
+    display: block;
+    height: 4rem;
+    width: 15rem;
+    background-color: var(--darkHighlight);
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
 }

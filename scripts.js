@@ -35,20 +35,20 @@ function introductionFade(d) {
 const searchButton = document.getElementsByClassName("--search-button")[0];
 const searchInput = document.getElementsByClassName("--search-input")[0];
 const initialWidth = searchInput.getBoundingClientRect().width;
-console.log("Initial width: " + initialWidth);
+var currentWidth
 
 searchButton.addEventListener("click", searchClick);
 
 function searchClick() {
     searchInput.style.animationPlayState = "running";
     searchInput.addEventListener("animationiteration", () => {
-        console.log("width: " + searchInput.getBoundingClientRect().width);
-        if (searchInput.getBoundingClientRect().width > initialWidth) {
+        searchInput.style.animationPlayState = "paused";
+        currentWidth = Math.floor(searchInput.getBoundingClientRect().width);
+        if (currentWidth > initialWidth) {
             searchInput.focus();
         } else {
             searchInput.blur();
         }
-        searchInput.style.animationPlayState = "paused";
         searchInput.removeEventListener("animationiteration", this);
     })
 }

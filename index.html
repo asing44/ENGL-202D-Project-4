@@ -31,18 +31,45 @@
                 <li class="--contact-link" id="contact_link"><a href="./contact.html">Contact</a></li>
             </ul>
         </nav>
+        <form class="--quick-contact-form" role="form" aria-label="Contact form">
+            <p class="--contact-heading">Contact Me</p>
+            <fieldset class="--contact-name">
+                <label for="contact_name"></label>
+                <input id="contact_name" type="text" placeholder="Full name..." required aria-required="true">
+            </fieldset>
+            <fieldset class="--contact-email">
+                <label for="contact_email"></label>
+                <input id="contact_email" type="email" placeholder="Email..." required aria-required="true">
+            </fieldset>
+            <fieldset class="--contact-message">
+                <label for="contact_message"></label>
+                <textarea id="contact_message" rows="5" cols="8" placeholder="Your message..." required aria-required="true"></textarea>
+            </fieldset>
+            <button type="submit">Send message</button>
+       </form>
         <section class="--welcome">
             <div class="--welcome-container">
-                <h1>
+                <div class="--welcome-content">
                     <span id="first">First</span>
                     <span id="last">Last</span>
-                </h1>
+                </div>
                 <p>Quick bit</p>
             </div>
         </section>
         <main>
             <section class="--introduction">
-
+                <p class="--intro-text">Your friendly Digital Multimedia designer, student, freelancer and personal advocate.</p>
+                <div class="--divider-container">
+                    <span class="--divider-line-double"></span><p class="--divider-text">Proven experience you can trust</p><span class="--divider-line-double"></span>
+                </div>
+                <div class="--intro-badges"><img src="./Images/Badges and Certifications.png" height="100"></div>
+                <div class="--divider-container">
+                    <div class="--divider-line"></div>
+                </div>
+                <div class="--quick-contact">
+                    <p class="--quick-contact-text">Want to get in touch? <br>Send me a message!</p>
+                    <button class="--quick-contact-button">Contact</button>
+                </div>
             </section>
         </main>
     </body>
