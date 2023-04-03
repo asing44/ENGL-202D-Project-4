@@ -745,9 +745,26 @@ footer p {
 .--blog-post-sidebar {
     position: relative;
     width: 100%;
+    padding: 2rem 0 0 2rem;
     grid-area: sidebar;
-    background-color: teal;
+    border-radius: 1rem;
+    font-size: var(--fontSize5); 
+    box-sizing: border-box;
 }
+
+.--blog-post-sidebar::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    height: 100%;
+    width: 75%;
+    border: 0.5rem solid var(--darkHighlight);
+    border-radius: 1rem;
+    clip-path: polygon(0 0, 95% 0%, 95% 95%, 0% 95%);
+}
+
 
 .--blog-post-link {
     color: var(--accent2);
