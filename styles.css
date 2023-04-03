@@ -103,6 +103,29 @@ button {
     cursor: pointer;
 }
 
+figure {
+    margin: 0 0 1rem 0;
+}
+
+blockquote {
+    position: relative;
+    font-style: italic;
+    margin: 0 0 0 2rem;
+    padding: 2rem 0;
+}
+
+blockquote::after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    left: -2%;
+    height: 100%;
+    width: 1%;
+    border-radius: 1rem;
+    background-color: var(--darkHighlight);
+}
+
 /* Navigation */
 
 nav {
@@ -601,7 +624,7 @@ footer p {
     row-gap: 3.5rem;
 }
 
-/* Blog posts */
+/* Blog posts page */
 
 .--blog-container {
     position: relative;
@@ -611,7 +634,7 @@ footer p {
     height: fit-content;
 }
 
-.--blog-post-image {
+.--blog-thumbnail {
     position: relative;
     width: 100%;
     aspect-ratio: 1215/772;
@@ -650,6 +673,112 @@ footer p {
 .--blog-post-button:hover {
     background-color: var(--darkBackground);
     color: var(--lightBackground);
+}
+
+/* Blog posts */
+
+.--blog-post-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 1rem;
+    grid-template-areas: 
+    "header header"
+    "divider divider"
+    "summary sidebar"
+    "body sidebar";
+    width: 80%;
+    margin: 4rem auto;
+    padding: 8rem 2rem;
+    background-color: var(--primary);
+    border-radius: 2.5rem;
+}
+
+.--blog-post-header {
+    grid-area: header;
+}
+
+.--blog-post-h1 {
+    font-size: var(--fontSize2);
+}
+
+.--blog-post-details {
+    font-size: var(--fontSize4);
+    font-family: var(--font2);
+    font-variant: small-caps;
+}
+
+.--blog-post-summary {
+    grid-area: summary;
+    font-size: var(--fontSize5);
+}
+
+.--blog-post-image-container {
+    position: relative;
+    display: inline-block;
+    grid-area: body;
+}
+
+.--blog-post-image {
+    position: relative;
+    display: block;
+    width: 75%;
+    aspect-ratio: 1215/772;
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 0.5rem;
+    border-radius: 1rem;
+}
+
+.--blog-post-image-caption {
+    width: 75%;
+    text-align: center;
+    font-size: var(--fontSize6);
+    font-style: italic;
+}
+
+.--blog-post-body {
+    grid-area: body;
+    font-size: var(--fontSize5);
+}
+
+.--blog-post-sidebar {
+    position: relative;
+    width: 100%;
+    grid-area: sidebar;
+    background-color: teal;
+}
+
+.--blog-post-link {
+    color: var(--accent2);
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+    transition: all 250ms ease-in-out;
+}
+
+.--blog-post-link:hover {
+    color: var(--accent4);
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+}
+
+.--blog-post-list-ref {
+    list-style: none;
+    text-indent: -1rem;
+}
+
+.--blog-post-h2 {
+    font-size: var(--fontSize3);
+    color: var(--accent2);
+}
+
+.--blog-post-h3 {
+    font-size: var(--fontSize4);
+    color: var(--accent2);
+}
+
+#website_grader {
+    aspect-ratio: unset;
 }
 
 /* Coming soon (TEMPROARY) */
