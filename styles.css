@@ -110,19 +110,21 @@ nav {
     display: flex;
     top: 0;
     flex-direction: row;
+    flex-flow: row;
     max-height: 10vh;
-    width: 100%;
+    width: 100vw;
     color: var(--lightBackground);
     border-color: var(--lightBackground);
     font-family: var(--font2);
     z-index: 2;
-    transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out, border-radius 0ms;
 }
 
 .--nav-scrolled {
-    animation: navScroll 250ms ease-in-out both alternate;
     color: var(--darkBackground);
     border-color: var(--darkBackground);
+    animation: navScroll 250ms ease-in-out both alternate;
+    transition: all 500ms ease-in-out, border-radius 0ms;
 }
 
 @keyframes navScroll {
@@ -157,19 +159,17 @@ nav {
 .--nav-links {
     position: relative;
     display: flex;
-    width: auto;
+    flex: auto;
     margin: 0 2rem;
     padding: 0;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
-    flex: 4;
 }
 
 .--nav-links li {
     display: block;
     height: 4rem;
-    width: 15rem;
     padding: 0;
     flex: 2 1 auto;
     margin: 1.5rem 1rem;
@@ -180,7 +180,7 @@ nav {
     line-height: 4rem;
     list-style: none;
     background-blend-mode: overlay;
-    transition: width 500ms ease-in-out, border-bottom 500ms ease-in, background-color 500ms ease-in-out, color 500ms ease-in-out;
+    transition: all 500ms ease-in-out, border-radius 0ms;
 }
 
 .--nav-links li a {
@@ -189,11 +189,11 @@ nav {
 }
 
 .--nav-links li a:active {
-    border-bottom: .10rem solid var(--darkBackground);
+    border-bottom: 0.1rem solid var(--darkBackground);
 }
 
 .nav.--nav-scrolled .--nav-links li a:active {
-    border-bottom: .10rem solid var(--lightBackground);
+    border-bottom: 0.1rem solid var(--darkBackground);
 }
 
 #contact_link {
@@ -203,16 +203,16 @@ nav {
 }
 
 nav .--nav-links li:hover {
-    width: 20rem;
+    padding: 0 5rem;
     border-radius: 0;
     border-bottom: 0.1rem solid;
     cursor: pointer;
 }
 
 nav.--nav-scrolled .--nav-links li:hover {
-    width: 20rem;
+    padding: 0 5rem;
     border-radius: 0;
-    border-bottom: 0.1rem solid var(--lightBackground);
+    border-bottom: 0.1rem solid var(--darkBackground);
     cursor: pointer;
 }
 
@@ -470,7 +470,7 @@ footer p {
 
 /* Main content */
 
-main {
+.--main-container {
     position: relative;
     width: 80%;
     margin: 4rem auto;
@@ -595,6 +595,7 @@ main {
 .--main-content-container {
     position: relative;
     display: grid;
+    width: 100%;
     grid-template-columns: 1fr 1fr;
     column-gap: 2.5rem;
     row-gap: 3.5rem;
@@ -611,7 +612,9 @@ main {
 }
 
 .--blog-post-image {
-    height: 29rem;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1215/772;
     background-position: center center;
     background-size: cover;
     margin-bottom: 1rem;
