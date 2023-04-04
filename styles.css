@@ -647,6 +647,11 @@ footer p {
     background-size: cover;
     margin-bottom: 1rem;
     border-radius: 1rem;
+    transition: all 250ms ease-in-out;
+}
+
+.--blog-thumbnail:hover {
+    opacity: 80%;
 }
 
 .--blog-post-title {
