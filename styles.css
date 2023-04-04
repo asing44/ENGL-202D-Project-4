@@ -11,9 +11,9 @@
     --fontSize7: 0.75rem;
     --lightBackground: #F4EDEA;
     --darkBackground: #13263a;
-    --lightHighlight: #06BCC1;
+    --lightHighlight: rgb(6, 188, 193);
     --darkHighlight: #E09F7D;
-    --primary: #C5D8D1;
+    --primary: rgb(197, 216, 209);
     --accent1: rgba(19, 38, 58, 0.5);
     --accent2: #4A6FA5;
     --accent3: #E4572E;
@@ -32,7 +32,10 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: var(--darkBackground);
+    filter: contrast(100%) brightness(100%);
+    background: 
+      linear-gradient(0deg, rgba(19,38,58,1), rgba(19,38,58,1)),
+      url(/👆/that/noise.svg);
     line-height: 1.4;
     font-family: var(--font3);
 }
@@ -618,10 +621,12 @@ footer p {
 .--main-content-container {
     position: relative;
     display: grid;
-    width: 100%;
     grid-template-columns: 1fr 1fr;
     column-gap: 2.5rem;
     row-gap: 3.5rem;
+    width: 100%;
+    padding: 0 2rem;
+    box-sizing: border-box;
 }
 
 /* Blog posts page */
@@ -696,6 +701,7 @@ footer p {
 
 .--blog-post-header {
     grid-area: header;
+    margin-bottom: 1rem;
 }
 
 .--blog-post-h1 {
@@ -765,6 +771,54 @@ footer p {
     clip-path: polygon(0 0, 95% 0%, 95% 95%, 0% 95%);
 }
 
+.--aside-keywords ul {
+    margin-top: 0;
+}
+
+.--recent-blogs-container {
+    position: relative;
+    width: 100%;
+    margin: 2rem 0;
+}
+.--recent-blogs-thumbnail {
+    max-width: 80%;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+.--recent-blogs-thumbnail:hover {
+    opacity: 85%;
+}
+
+.--aside-button {
+    display: block;
+    height: 2.5rem;
+    width: 8rem;
+    padding: 0.25rem 1rem;
+    background-color: var(--darkHighlight);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: var(--fontSize5);
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+    box-sizing: content-box;
+}
+
+.--aside-button:hover {
+    background-color: var(--darkBackground);
+    color: var(--lightBackground);
+}
+
+.--aside-divider {
+    position: relative;
+    height: 0.25rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    background-color: var(--darkBackground);
+    opacity: 40%;
+}
 
 .--blog-post-link {
     color: var(--accent2);
@@ -784,7 +838,7 @@ footer p {
     text-indent: -1rem;
 }
 
-.--blog-post-h2 {
+.--aside-h2 {
     font-size: var(--fontSize3);
     color: var(--accent2);
 }
