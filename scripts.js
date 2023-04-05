@@ -4,7 +4,7 @@ function mapNumbers(number, inMin, inMax, outMin, outMax) {
 
 // Introduction fade and nav recolor
 
-const welcomeSection = 0;
+var welcomeSection;
 var indexPage = false;
 
 if (document.URL.includes("index")) {
@@ -14,6 +14,7 @@ if (document.URL.includes("index")) {
 }
 
 if (indexPage) {
+    console.log("yes!")
     welcomeSection = document.getElementsByClassName("--welcome")[0];
 }
 
