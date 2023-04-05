@@ -68,3 +68,33 @@ function closeContact() {
     contactSection.style.paddingRight = "0rem"
     contactSection.style.paddingLeft = "0rem";
 }
+
+// Image gallery
+
+const mainImage = document.getElementById("main_gallery_image");
+const imagesArray = document.getElementsByClassName("--image-gallery-thumbnail-image");
+const nextImageButton = document.getElementsByClassName("--image-gallery-next")[0];
+const prevImageButton = document.getElementsByClassName("--image-gallery-previous")[0];
+
+var activeImage = 0;
+
+function galleryIndex(n) {
+
+    activeImage += n;
+
+    if (activeImage < 0) {
+        activeImage = 2;
+    } else if (activeImage > 2) {
+        activeImage = 0;
+    }
+
+    mainImage.setAttribute("src", imagesArray[activeImage].getAttribute("src"));
+
+    for (let i = 0; i <= imagesArray.length - 1; i++) {
+        if (imagesArray[i].getAttribute("src") == imagesArray[activeImage].getAttribute("src")) {
+            imagesArray[i].classList.add("--active-gallery-image");
+        } else {
+            imagesArray[i].classList.remove("--active-gallery-image");
+        }
+    }
+}

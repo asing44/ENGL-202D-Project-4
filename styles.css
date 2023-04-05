@@ -729,6 +729,12 @@ footer p {
     text-indent: -1rem;
 }
 
+.--blog-post-main-image-container {
+    position: relative;
+    display: inline-block;
+    grid-area: body;
+}
+
 .--blog-post-image-container {
     position: relative;
     display: inline-block;
@@ -738,6 +744,17 @@ footer p {
 .--blog-post-image-container.--blog-2 {
     grid-area: unset;
     margin: 0;
+}
+
+.--blog-post-main-image {
+    position: relative;
+    display: block;
+    width: 75%;
+    aspect-ratio: 1215/772;
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 0.5rem;
+    border-radius: 1rem;
 }
 
 .--blog-post-image {
@@ -762,6 +779,17 @@ footer p {
     border-radius: 1rem;
 }
 
+#main_gallery_image {
+    box-sizing: border-box;
+}
+
+.--blog-post-main-image-caption {
+    width: 75%;
+    text-align: center;
+    font-size: var(--fontSize6);
+    font-style: italic;
+}
+
 .--blog-post-image-caption {
     width: 75%;
     text-align: center;
@@ -777,25 +805,66 @@ footer p {
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 75%;
     grid-area: body;
+    width: 75%;
+    padding: 1rem;
+    border: 0.25rem solid var(--darkBackground);
+    border-radius: 1rem;
+    box-sizing: border-box;
+}
+
+.--image-gallery-divider {
+    height: 0.25rem;
+    margin-top: 1rem;
+    background-color: var(--darkBackground);
+    border-radius: 1rem;
 }
 
 .--image-gallery-thumbnails {
+    position: relative;
     display: flex;
+    align-items: center;
+    justify-content: space-around;
     width: 100%;
     height: 7rem;
-    background-color: teal;
+    margin-top: 1rem;
     border-radius: 1rem;
+    box-sizing: border-box;
+}
+
+.--image-gallery-thumbnail-image {
+    position: relative;
+    max-height: 5rem;
+    border-radius: 1rem;
+    border: none;
+    opacity: 100%;;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+.--image-gallery-thumbnail-image:hover {
+    position: relative;
+    max-height: 5.5rem;
+    opacity: 80%;
+    cursor: pointer;
+}
+
+.--active-gallery-image {
+    max-height: 5.5rem;
+    border: 0.25rem solid var(--darkHighlight);
+}
+
+.--blog-post-image-gallery line {
+    stroke: var(--darkBackground);
 }
 
 .--image-gallery-previous {
     position: absolute;
     top: 30%;
-    left: 0.5rem;
+    left: 1.5rem;
     height: 5rem;
     width: 5rem;
-    background-color: var(--darkBackground);
+    border: 0.25rem solid var(--darkBackground);
     border-radius: 1rem;
     opacity: 50%;
     transform: rotate(180deg);
@@ -805,10 +874,10 @@ footer p {
 .--image-gallery-next {
     position: absolute;
     top: 30%;
-    right: 0.5rem;
+    right: 1.5rem;
     height: 5rem;
     width: 5rem;
-    background-color: var(--darkBackground);
+    border: 0.25rem solid var(--darkBackground);
     border-radius: 1rem;
     opacity: 50%;
     transition: all 250ms ease-in-out;

@@ -67,9 +67,9 @@
                 </ul>
             </article>
             <article class="--blog-post-body --blog-2">
-                <figure class="--blog-post-image-container --blog-2">
-                    <img class="--blog-post-image --blog-2" src="./Images/Blog 2 Design.png" alt="Components of web design">
-                    <figcaption class="--blog-post-image-caption --blog-2">Web design components</figcaption>
+                <figure class="--blog-post-main-image-container --blog-2">
+                    <img class="--blog-post-main-image --blog-2" src="./Images/Blog 2 Design.png" alt="Components of web design">
+                    <figcaption class="--blog-post-main-image-caption --blog-2">Web design components</figcaption>
                 </figure>
                 <h2 class="--blog-post-h2 --blog-2">What are the basics of good web design?</h2>
                 <p>Like anything complicated, there is a basic set of rules that should be generally followed when designing for the web. These rules and a more in-depth explanation of each can be seen in <a class="--blog-post-link --blog-2" href="https://xd.adobe.com/ideas/principles/web-design/12-dos-donts-web-design-2/">this article</a> by Adobe.<br><br>Here is a list and short description of a few of the rules:</p>
@@ -86,13 +86,18 @@
                 <p>For a solid example of getting this balance just right, look no further than <a class="--blog-post-link --blog-2" href="https://express.adobe.com/page/RUestmsVHFVcK/">this portfolio site</a> by Gary Shear. Scroll through the different examples using the arrows or visit the site using the links.</p>
                 <div class="--blog-post-image-gallery --blog-2">
                     <figure class="--blog-post-image-container --blog-2">
-                        <img class="--blog-post-image --blog-2" src="./Images/Blog 2 Portfolio Example.png" alt="A portfolio website">
+                        <img class="--blog-post-image --blog-2" id="main_gallery_image" src="./Images/Blog 2 Portfolio Example.png" alt="A portfolio website">
                     </figure>
-                    <div class="--image-gallery-thumbnails --blog-2"></div>
-                    <div class="--image-gallery-previous --blog-2">
+                    <div class="--image-gallery-divider --blog-2"></div>
+                    <div class="--image-gallery-thumbnails --blog-2">
+                        <img class="--image-gallery-thumbnail-image --active-gallery-image --blog-2" src="./Images/Blog 2 Portfolio Example.png" alt="A portfolio website">
+                        <img class="--image-gallery-thumbnail-image --blog-2" src="./Images/Blog 2 Portfolio Example 2.png" alt="A portfolio website">
+                        <img class="--image-gallery-thumbnail-image --blog-2" src="./Images/Blog 2 Portfolio Example 3.png" alt="A portfolio website">
+                    </div>
+                    <div class="--image-gallery-previous --blog-2" onclick="galleryIndex(-1)">
                         <svg id="e6Qt8EfZvHU1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><g transform="translate(-6.27665 0.203012)"><line x1="-6.007067" y1="-5.350567" x2="6.007067" y2="5.350567" transform="translate(26.276649 14.24341)" fill="none" stroke="#f4edea" stroke-width="2" stroke-linecap="round"/><line x1="-6.007067" y1="-5.350567" x2="6.007067" y2="5.350567" transform="matrix(1 0 0-1 26.276651 25.350567)" fill="none" stroke="#f4edea" stroke-width="2" stroke-linecap="round"/></g></svg>
                     </div>
-                    <div class="--image-gallery-next --blog-2">
+                    <div class="--image-gallery-next --blog-2" onclick="galleryIndex(1)">
                         <svg id="e6Qt8EfZvHU1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><g transform="translate(-6.27665 0.203012)"><line x1="-6.007067" y1="-5.350567" x2="6.007067" y2="5.350567" transform="translate(26.276649 14.24341)" fill="none" stroke="#f4edea" stroke-width="2" stroke-linecap="round"/><line x1="-6.007067" y1="-5.350567" x2="6.007067" y2="5.350567" transform="matrix(1 0 0-1 26.276651 25.350567)" fill="none" stroke="#f4edea" stroke-width="2" stroke-linecap="round"/></g></svg>
                     </div>
                 </div>
@@ -106,7 +111,7 @@
                     <h2 class="--aside-h2 --blog-2">Keywords</h2>
                     <ul>
                         <li>Web Design</li>
-                        <li>Trends</li>
+                        <li>Rules</li>
                         <li>Learning</li>
                         <li>Websites</li>
                     </ul>
@@ -114,11 +119,11 @@
                 <h2 class="--aside-h2 --blog-2">Recent Blogs</h2>
                 <section class="--aside-recent-blogs --blog-2">
                     <div class="--recent-blogs-container --blog-2">
-                        <img class="--recent-blogs-thumbnail --blog-2" src="./Images/Blog 2 Image.png" alt="A person creating wireframes">
-                        <h4 class="--recent-blogs-post-title">Looking at Good Examples of Site Design</h4>
-                        <p class="--recent-blogs-post-details">AUTHOR | April 2, 2023</p>
-                        <p class="--recent-blogs-description">Examples of websites with great design and the best practices to making your own fantastic designs.</p>
-                        <a class=--aside-link href="./blog-2.html"><button class="--aside-button" type="button">Read Post</button></a>
+                        <img class="--recent-blogs-thumbnail --blog-2" src="./Images/Blog 1 Image.png" alt="A person brainstorming design trends">
+                        <h4 class="--recent-blogs-post-title">2022 Web Design Trends Important For Everyone</h4>
+                        <p class="--recent-blogs-post-details">AUTHOR | April 1, 2023</p>
+                        <p class="--recent-blogs-description">An interesting look into past Web Design trends and how they have changed design on the web.</p>
+                        <a class=--aside-link href="./blog-1.html"><button class="--aside-button" type="button">Read Post</button></a>
                         <div class="--aside-divider"></div>
                     </div>
                     <div class="--recent-blogs-container --blog-2">
