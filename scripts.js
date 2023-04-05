@@ -4,8 +4,20 @@ function mapNumbers(number, inMin, inMax, outMin, outMax) {
 
 // Introduction fade and nav recolor
 
+const welcomeSection = 0;
+var indexPage = false;
+
+if (document.URL.includes("index")) {
+    indexPage = true;
+} else {
+    indexPage = false;
+}
+
+if (indexPage) {
+    welcomeSection = document.getElementsByClassName("--welcome")[0];
+}
+
 const mainEl = document.getElementsByTagName("main")[0];
-const welcomeSection = document.getElementsByClassName("--welcome")[0];
 const navEl = document.getElementsByTagName("nav")[0];
 var distanceTraveled;
 
@@ -19,7 +31,9 @@ addEventListener("scroll", () => {
 
     distanceTraveled = Math.floor((window.scrollY / (mainEl.offsetTop)) * 100);
     if (distanceTraveled >= 0 && distanceTraveled <= 100) {
-        introductionFade(mapNumbers(distanceTraveled, 0, 100, 70, 25))
+       if (indexPage) {
+        introductionFade(mapNumbers(distanceTraveled, 0, 100, 70, 25));
+       }
     }
 });
 
@@ -29,6 +43,7 @@ function introductionFade(d) {
     mainEl.style.position = "relative"; 
 
 }
+
 
 // Search button
 
@@ -77,6 +92,19 @@ const nextImageButton = document.getElementsByClassName("--image-gallery-next")[
 const prevImageButton = document.getElementsByClassName("--image-gallery-previous")[0];
 
 var activeImage = 0;
+
+function thumbnailClicked(event) {
+    
+    let counter = 0;
+    let elSrc = event.target.getAttribute("src");
+    
+    for (let i = 0; i <= imagesArray.length - 1; i++) {
+        if (imagesArray[i].getAttribute("src") == elSrc) {
+            activeImage = i;
+        }
+        galleryIndex(0);
+    }
+}
 
 function galleryIndex(n) {
 

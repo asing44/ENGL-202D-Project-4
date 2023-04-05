@@ -33,10 +33,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     filter: contrast(100%) brightness(100%);
-    background: 
-      linear-gradient(0deg, rgba(19,38,58,1), rgba(19,38,58,1)),
-      url(/👆/that/noise.svg);
-    line-height: 1.4;
+    background-color: var(--darkBackground);
     font-family: var(--font3);
 }
 
@@ -128,6 +125,8 @@ blockquote::after {
     border-radius: 1rem;
     background-color: var(--darkHighlight);
 }
+
+/* Background noise overlay */
 
 /* Navigation */
 
@@ -780,6 +779,7 @@ footer p {
 }
 
 #main_gallery_image {
+    max-height: 330px;
     box-sizing: border-box;
 }
 
@@ -808,8 +808,6 @@ footer p {
     grid-area: body;
     width: 75%;
     padding: 1rem;
-    border: 0.25rem solid var(--darkBackground);
-    border-radius: 1rem;
     box-sizing: border-box;
 }
 
@@ -855,16 +853,16 @@ footer p {
 }
 
 .--blog-post-image-gallery line {
-    stroke: var(--darkBackground);
+    stroke: var(--darkHighlight);
 }
 
 .--image-gallery-previous {
     position: absolute;
     top: 30%;
     left: 1.5rem;
-    height: 5rem;
-    width: 5rem;
-    border: 0.25rem solid var(--darkBackground);
+    height: 3.5rem;
+    width: 3.5rem;
+    border: 0.25rem solid var(--darkHighlight);
     border-radius: 1rem;
     opacity: 50%;
     transform: rotate(180deg);
@@ -875,9 +873,9 @@ footer p {
     position: absolute;
     top: 30%;
     right: 1.5rem;
-    height: 5rem;
-    width: 5rem;
-    border: 0.25rem solid var(--darkBackground);
+    height: 3.5rem;
+    width: 3.5rem;
+    border: 0.25rem solid var(--darkHighlight);
     border-radius: 1rem;
     opacity: 50%;
     transition: all 250ms ease-in-out;

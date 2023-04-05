@@ -3,8 +3,8 @@
     <head>
         <meta name="viewport" content="width=device-width, intial-scale=1.0">
         <meta charset="utf-8">
-        <meta name="description" content="Adam Warsing's personal portfolio">
-        <title>ADAM WARSING</title>
+        <meta name="description" content="NAME's personal portfolio">
+        <title>NAME</title>
         <link rel="icon" type="image/x-icon" href="./Images/Logo.png">
         <link rel="stylesheet" href="./styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +14,16 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
     <body>
+        <svg class="--background-noise" viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'>
+            <filter id='noiseFilter'>
+                <feTurbulence 
+                    type='fractalNoise' 
+                    baseFrequency='5.55' 
+                    numOctaves='5' 
+                    stitchTiles='stitch'/>
+            </filter>
+            <rect width='100%' height='100vh' filter='url(#noiseFilter)'/>
+        </svg>
         <div class="--search-widget">
             <form action="">
                 <label for="search_input" aria-label="Search"></label>
@@ -78,7 +88,7 @@
         </main>
     </body>
     <footer>
-        <p class="--footer-text">© Adam Warsing 2023</p>
+        <p class="--footer-text">© NAME 2023</p>
     </footer>
     <script src="scripts.js"></script>
 </html>
