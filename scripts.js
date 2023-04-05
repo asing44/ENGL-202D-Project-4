@@ -18,7 +18,7 @@ if (indexPage) {
     welcomeSection = document.getElementsByClassName("--welcome")[0];
 }
 
-const mainEl = document.getElementsByTagName("main")[0];
+const mainEl = document.getElementById("first_main_container");
 const navEl = document.getElementsByTagName("nav")[0];
 var distanceTraveled;
 
