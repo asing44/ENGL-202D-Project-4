@@ -698,6 +698,12 @@ nav.--nav-scrolled .--nav-links li:hover {
     float: left;
     color: var(--lightBackground);
     font-size: var(--fontSize4);
+    opacity: 80%;
+    transition: all 250ms ease-in-out;
+}
+
+.--breadcrumbs-list li:hover {
+    opacity: 100%;
 }
 
 .--breadcrumbs-list li:nth-of-type(n + 2) {
