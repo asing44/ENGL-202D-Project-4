@@ -583,42 +583,83 @@ nav.--nav-scrolled .--nav-links li:hover {
                          ". CTA";
 }
 
-figure[class="--about-me"] {
+div[class="--about-me"] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     grid-area: picture;
+}
+
+.--about-me-image-container {
+    position: relative;
+    display: inline-block;
+    max-width: 75%;
+}
+
+.--about-me-image-container::before {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: var(--darkHighlight);
+    border-radius: 1rem;
+}
+
+img.--about-me {
+    display: block;
+    position: relative;
+    max-width: 100%;
+    border-radius: 1rem;
+}
+
+img.--about-me::before {
+    position: relative;
+    max-width: 75%;
+    border-radius: 1rem;
 }
 
 div[class~="--quote"] {
     position: relative;
-    display: inline;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1rem;
     grid-area: quote;
 }
 
+div[class~="--quote"]::before {
+    position: absolute;
+    right: 0;
+    content: "";
+    height: 100%;
+    width: 0.5rem;
+    background-color: var(--darkHighlight);
+    border-radius: 1rem;
+}
+
+div[class~="--quote"]::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    content: "";
+    height: 0.5rem;
+    width: 100%;
+    background-color: var(--darkHighlight);
+    border-radius: 1rem;
+}
+
 div[class~="--quote"] blockquote {
+    position: relative;
     display: block;
     margin: 0;
     font-style: italic;
     font-size: var(--fontSize4);
     text-align: center;
-}
-
-div[class~="--quote"] blockquote::before {
-    position: absolute;
-    content: "";
-    left: 4rem;
-    height: 100%;
-    width: 0.5rem;
-    background-color: var(--darkHighlight);
-    border-radius: 1rem;
-}
-
-div[class~="--quote"] blockquote::after {
-    position: absolute;
-    content: "";
-    right: -1.5rem;
-    height: 100%;
-    width: 0.5rem;
-    background-color: var(--darkHighlight);
-    border-radius: 1rem;
 }
 
 div[class~="--quote"] cite {
@@ -629,7 +670,27 @@ div[class~="--quote"] cite {
 }
 
 .--socials-container {
+    position: relative;
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 4rem;
     grid-area: socials;
+}
+
+.--socials-container i.fa-brands {
+    position: relative;
+    font-size: 3rem;
+    color: var(--darkBackground);
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+.--socials-container i.fa-brands:hover {
+    position: relative;
+    font-size: 4rem;
+    color: var(--darkHighlight);
 }
 
 .--description.--about-me {
