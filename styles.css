@@ -202,6 +202,7 @@ nav {
 }
 
 #contact_link {
+    max-width: 20rem;
     background-color: var(--darkHighlight);
     color: var(--darkBackground);
     border-radius: 1rem;
@@ -580,7 +581,6 @@ nav.--nav-scrolled .--nav-links li:hover {
                          "picture description"
                          "socials description"
                          ". description"
-                         ". CTA";
 }
 
 div[class="--about-me"] {
@@ -695,10 +695,19 @@ div[class~="--quote"] cite {
 
 .--description.--about-me {
     grid-area: description;
+    padding: 2rem 1rem;
 }
 
-.--about-me-content-container a {
-    grid-area: CTA;
+.--description.--about-me p {
+    font-size: var(--fontSize5);
+    line-height: 1.5;
+}
+
+.--description.--about-me .--inline-highlight {
+    padding: calc(var(--fontSize5) * 0.25) calc(var(--fontSize5) * 0.5);
+    background-color: var(--darkHighlight);
+    border-radius: 0.25rem;
+    font-size: calc(var(--fontSize5) + var(--fontSize5) * 0.25);
 }
 
 /* Blog page */
