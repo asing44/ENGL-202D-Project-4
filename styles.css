@@ -1166,15 +1166,119 @@ div[class~="--quote"] cite {
     aspect-ratio: unset;
 }
 
-/* Coming soon (TEMPROARY) */
+/* Experience page */
 
-.--coming-soon-text {
+.--resume {
+    padding: 2rem 4rem;
+    background-color: var(--darkBackground);
+    border-radius: 1rem;
+}
+
+.--resume .--heading {
+    position: relative;
+    display: block;
+    color: var(--primary);
+    font-family: var(--font1);
+    font-size: var(--fontSize3)
+}
+
+.--resume .--heading::after {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    content: "";
+    height: 0.25rem;
     width: 100%;
-    margin-top: 25vh;
+    background-color: var(--darkHighlight);
+    border-radius: 1rem;
+    opacity: 50%;
+}
+
+.--resume .--subheading {
+    color: var(--primary);
+    font-family: var(--font1);
+    font-size: var(--fontSize4);
+}
+
+.--resume p ,.--resume li {
+    color: var(--lightBackground)
+}
+
+.--resume span[class="--bold"] {
+    font-weight: bold;
+}
+
+.--projects {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.--project-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+    height: 25%;
+    width: calc(100% - 2rem);
+    padding: 2rem 1rem;
+    background-color: var(--darkHighlight);
+    border-radius: 1rem;
+    z-index: 1;
+}
+
+.--project-tag {
+    position: absolute;
+    top: calc((var(--fontSize4) * -1));
+    right: -2rem;
+    height: 2.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    background-color: var(--darkBackground);
     color: var(--lightBackground);
     text-align: center;
-    font-size: var(--fontSize1);
-    
+    line-height: 2.5rem;
+    font-size: var(--fontSize5);
+    font-family: var(--font2);
+}
+
+.--project-title {
+    position: absolute;
+    top: -2rem;
+    z-index: 2;
+}
+
+.--project-container h3 {
+    color: var(--lightBackground);
+    font-size: var(--fontSize4);
+}
+
+.--project-container h3::before {
+    position: absolute;
+    display: block;
+    content: "";
+    right: -1rem;
+    top: -1rem;
+    width: calc(100% + 4rem);
+    height: 4rem;
+    border-radius: 1rem;
+    background-color: var(--darkBackground);
+    z-index: -1;
+}
+
+.--project-container figure {
+    position: relative;
+    max-width: 50%;
+    text-align: center;
+}
+
+.--project-container img {
+    max-width: 100%;
+    border-radius: 1rem;
 }
 
 /* Footer */
