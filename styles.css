@@ -106,6 +106,10 @@ figure {
     margin: 0 0 1rem 0;
 }
 
+span[class="--bold"] {
+    font-weight: bold;
+}
+
 /* Background noise overlay */
 
 /* Navigation */
@@ -596,6 +600,7 @@ div[class="--about-me"] {
     position: relative;
     display: inline-block;
     max-width: 75%;
+
 }
 
 .--about-me-image-container::before {
@@ -614,6 +619,7 @@ img.--about-me {
     position: relative;
     max-width: 100%;
     border-radius: 1rem;
+    background-color: var(--darkBackground);
 }
 
 img.--about-me::before {
@@ -1169,6 +1175,7 @@ div[class~="--quote"] cite {
 /* Experience page */
 
 .--resume {
+    max-width: 70%;
     padding: 2rem 4rem;
     background-color: var(--darkBackground);
     border-radius: 1rem;
@@ -1207,6 +1214,12 @@ div[class~="--quote"] cite {
 
 .--resume span[class="--bold"] {
     font-weight: bold;
+}
+
+#experience_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .--projects {
